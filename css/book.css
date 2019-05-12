@@ -66,3 +66,14 @@
         opacity: 1
     }
 }
+
+li {
+    list-style-type: none;
+}
+.item-block {
+    border-bottom: 3px solid silver;
+}
+.book-info-wrap label {
+    font-size: 15px;
+    font-weight: bold;
+}

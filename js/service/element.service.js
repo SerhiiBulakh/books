@@ -18,34 +18,34 @@ function createBook(data) {
     </div>
     
   <div class="book-info-wrap">
-    <h2 class="book-title">Book details</h2>
+    <h2 class="book-title">Информация</h2>
       <ul class="book-info">
           <li>
-                <label>Дата</label>
+                <label>Дата: </label>
                 <span>${data.published}</span>
           </li>
           <li>
-                <label>Категория</label>
+                <label>Категория: </label>
                 <span>${data.category}}</span>
           </li>
           <li>
-                <label>Название издательства</label>
+                <label>Издательство: </label>
                 <span>${data.publisher.name}</span>
           </li>
           <li>
-              <label>телефон издательства</label>
+              <label>Телефон издательства: </label>
               <span>${data.publisher.phone}</span>
           </li>
           <li>
-              <label>адрес издательства</label>
+              <label>Адрес издательства: </label>
               <span>${data.publisher.address}</span>
           </li>
       </ul>
      
   </div>
   <div>
-  <a href="./form.html" class='upgrade-btn' >Изменить</a>
-  <a href='#' class='delete-btn' >Удалить</a>
+  <a href="./form.html"  class='upgrade-btn btn-style'>Изменить</a>
+  <a href='#'  class='btn-style delete-btn'>Удалить</a>
   </div>
   `
     return div

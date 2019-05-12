@@ -8,7 +8,7 @@ body {
     width: 50%;
 }
 
-a{
+.btn-style{
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -23,7 +23,7 @@ a{
     border: 2px solid #555555;
 }
 
-a:hover{
+.btn-style:hover{
     background-color: #555555;
     color: white;
 }

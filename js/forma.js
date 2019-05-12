@@ -1,6 +1,9 @@
 import { get, update, deleteItem } from './models/books.model';
 
+document.addEventListener("DOMContentLoaded", ready);
 
+
+  function ready() {
     const booksForm = document.querySelector('#bookForm')
     const bname = document.querySelector('#bname')
     const idBook = document.querySelector('#id-book')
@@ -13,11 +16,8 @@ import { get, update, deleteItem } from './models/books.model';
     const img = document.querySelector('#img')
    
     
-    if(booksForm) booksForm.addEventListener('submit', checkForm)
-
-    
-
-   if(booksForm) main()
+     booksForm.addEventListener('submit', checkForm)
+     main()
 
 
 function main() {
@@ -51,6 +51,7 @@ publishingPhone.value = book[0].publisher.phone
         update('books',books)
         deleteItem('book')
         clearForm()
+        window.location.href = './index.html'
     }
     
     
@@ -61,6 +62,7 @@ publishingPhone.value = book[0].publisher.phone
         books.push(book)
         update('books',books)
         clearForm()
+        window.location.href = './index.html'
     }
 
 
@@ -114,3 +116,6 @@ publishingPhone.value = book[0].publisher.phone
           reader.readAsDataURL(file);
         })
       }
+  }
+
+    

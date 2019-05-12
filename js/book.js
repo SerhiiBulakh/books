@@ -1,42 +1,54 @@
 import { get, update, deleteItem } from './models/books.model';
 import { createBook } from './service/element.service';
 import {plusSlide,showSlides,minusSlide} from './service/slider'
+
+
 const mainContent = document.querySelector('.content')
-
-
- init()
- showSlides()
-
-mainContent.addEventListener('click', check)
+document.addEventListener("DOMContentLoaded", ready);
+init()
 
 
 
-function check (event) {
-    const el = event.target
-    const parEl = el.closest('.book')
-    if(el.className == 'upgrade-btn') return upgradeBook(parEl)
-    if(el.className == 'delete-btn') return deleteBook(parEl)
-    if(el.className == 'prev') return minusSlide()
-    if(el.className == 'next') return plusSlide()
-}
 
-function deleteBook(el) {
 
+function ready() {
+
+const upgradeBtn = document.querySelector('.upgrade-btn')
+const deleteBtn = document.querySelector('.delete-btn')
+const prev = document.querySelector('.prev')
+const next = document.querySelector('.next')
+
+showSlides()
+
+
+
+upgradeBtn.addEventListener('click', upgradeBook)
+deleteBtn.addEventListener('click', deleteBook)
+prev.addEventListener('click', minusSlide)
+next.addEventListener('click',plusSlide)
+
+
+
+function deleteBook(event) {
+   const el = event.target.closest('.book')
    const books = get('books')
-    const upBooks = books.filter(v => v.id != el.id)
+   const upBooks = books.filter(v => v.id != el.id)
    update('books',upBooks)
    deleteItem('infoBook')
-   window.location.href = './previewBooks.html'
+   window.location.href = './index.html'
   
 }
 
-function upgradeBook(el) {
+function upgradeBook(event) {
+   const el = event.target.closest('.book')
     const books = get('books')
    const book = books.filter(v => v.id == el.id)
    update('book', book)
   
 }
 
+
+}
 
 
  function init() {
